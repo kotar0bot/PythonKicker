@@ -163,6 +163,10 @@ namespace PythonKicker {
 	}
 
 	private: System::Void kickButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		CString path = (PythonDirectoryName + "test.txt").c_str();
+		CT2A ascii(path);
+		remove(ascii.m_psz);
+
 		strReplace(PythonDirectoryName, "\\", "\\\\");
 		string teststr =  "/c cd " + PythonDirectoryName + " ; python .\\\\" + PythonFileName + " > " + PythonDirectoryName + "test.txt -Encoding utf8";
 
@@ -172,7 +176,7 @@ namespace PythonKicker {
 		ShellExecute(NULL, L"open", L"powershell.exe", result, L"", SW_HIDE);
 
 		setlocale(LC_ALL, "");
-		CString path = (PythonDirectoryName + "test.txt").c_str();
+		
 
 		while (!PathFileExists(path)){
 			if (PathFileExists(path)) {
