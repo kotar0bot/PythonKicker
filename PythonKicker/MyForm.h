@@ -138,21 +138,6 @@ namespace PythonKicker {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-	/*std::string replaceAll(std::string& replacedStr, std::string from, std::string to) {
-		unsigned int pos = replacedStr.find(from);
-		int toLen = to.length();
-
-		if (from.empty()) {
-			return replacedStr;
-		}
-
-		while ((pos = replacedStr.find(from, pos)) != std::string::npos) {
-			replacedStr.replace(pos, from.length(), to);
-			pos += toLen;
-		}
-		return replacedStr;
-	}*/
-
 	void strReplace(std::string& str, const std::string& from, const std::string& to) {
 
 		std::string::size_type pos = 0;
@@ -162,7 +147,6 @@ namespace PythonKicker {
 			str.replace(pos, from.length(), to);
 
 			pos += to.length();
-
 		}
 	}
 

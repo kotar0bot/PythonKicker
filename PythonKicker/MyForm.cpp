@@ -3,7 +3,9 @@
 using namespace PythonKicker;
 
 [STAThreadAttribute]
-int main() {
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+{
 	Application::Run(gcnew MyForm());
 	return 0;
 }
+
